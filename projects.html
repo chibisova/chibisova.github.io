@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tanya Chibisova — Projects</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, serif; font-size: 17px; color: #111; background: #fff; display: flex; min-height: 100vh; }
+
+  nav {
+    width: 317px; min-width: 317px;
+    padding: 40px 0 40px 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 4px 0 18px rgba(0, 0, 0, 0.08);
+    position: fixed; top: 0; left: 0; bottom: 0;
+    background: #fff;
+  }
+  nav a {
+    display: block; padding: 14px 0;
+    text-decoration: none; color: #888;
+    font-family: Arial, Helvetica, sans-serif; font-size: 22px;
+    width: 100%; text-align: center;
+  }
+  nav a:hover { color: #111; }
+  nav a.active { color: #2a7ae2; }
+  nav .credit {
+    position: absolute; bottom: 40px; left: 0; right: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif; font-size: 17px; color: #aaa;
+  }
+  nav .credit a { color: #2a7ae2; font-size: 17px; padding: 0; display: inline; }
+
+  main { margin-left: 317px; padding: 70px 80px 80px; max-width: 880px; }
+
+  h1 { font-family: Arial, Helvetica, sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 14px; }
+  .intro { color: #444; line-height: 1.7; margin-bottom: 28px; }
+
+  /* Filter bar */
+  .filter-bar {
+    display: flex; gap: 8px; margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-family: Arial, Helvetica, sans-serif; font-size: 13px;
+    padding: 5px 14px; border: 1px solid #ccc;
+    background: #fff; color: #555; cursor: pointer;
+    border-radius: 3px;
+  }
+  .filter-btn:hover { border-color: #888; color: #111; }
+  .filter-btn.active { background: #2a7ae2; color: #fff; border-color: #2a7ae2; }
+
+  h2 { font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-weight: 700; color: #c0392b; margin: 40px 0 16px; }
+  h2.hidden { display: none; }
+
+  .project { display: flex; gap: 32px; margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+  .project:last-child { border-bottom: none; }
+  .project.hidden { display: none; }
+  .project-body { flex: 1; }
+  .project-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700; font-size: 16px; color: #2a7ae2;
+    text-decoration: none; display: block; margin-bottom: 4px;
+  }
+  a.project-title:hover { text-decoration: underline; }
+  span.project-title { cursor: default; }
+  .project-meta { font-size: 14px; color: #888; margin-bottom: 8px; font-family: Arial, Helvetica, sans-serif; }
+  .project-desc { color: #333; line-height: 1.65; font-size: 16px; }
+  .project-links { margin-top: 8px; }
+  .project-links a {
+    color: #2a7ae2; text-decoration: none;
+    font-size: 14px; font-family: Arial, Helvetica, sans-serif;
+    margin-right: 16px;
+  }
+  .project-links a:hover { text-decoration: underline; }
+  .project-links .soon { color: #888; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-style: italic; }
+
+  @media (max-width: 640px) {
+    body { flex-direction: column; }
+    nav {
+      position: sticky; top: 0; bottom: auto;
+      width: 100%; min-width: 0; z-index: 10;
+      flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;
+      padding: 0 8px;
+      border-right: none; border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    nav a { width: auto; padding: 14px 12px; text-align: center; font-size: 15px; }
+    nav .credit { display: none; }
+    main { margin-left: 0; padding: 32px 20px; min-height: auto; }
+    .project { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">About</a>
+  <a href="resume.html">Resume</a>
+  <a href="research.html">Research</a>
+  <a href="projects.html" class="active">Projects</a>
+  <div class="credit">
+    Template:<br>
+    <a href="https://github.com/stevenplatt/ResearchEng-portfolio">ResearchEng Portfolio</a>
+  </div>
+</nav>
+
+<main>
+  <h1>Projects</h1>
+  <p class="intro">A selection of personal, coursework, and professional projects in real-time graphics, computer vision, and game development.</p>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="personal">Personal Projects</button>
+    <button class="filter-btn" data-filter="games">Games</button>
+  </div>
+
+  <!-- ── Personal ──────────────────────────────────────────── -->
+  <h2 data-section="personal">Personal Projects</h2>
+
+  <div class="project" data-cat="personal">
+    <div class="project-body">
+      <a class="project-title" href="https://github.com/chibisova/catgpt" target="_blank" rel="noopener">CatGPT Widget</a>
+      <div class="project-meta">Sep 2026 &nbsp;·&nbsp; Python</div>
+      <div class="project-desc">A small desktop widget that responds to prompts as a cat. A playful experiment in wrapping LLM APIs with a custom personality layer.</div>
+      <div class="project-links"><a href="https://github.com/chibisova/catgpt" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+  </div>
+
+  <div class="project" data-cat="personal">
+    <div class="project-body">
+      <span class="project-title">MHR Mesh Viewer</span>
+      <div class="project-meta">Aug 2026 — ongoing &nbsp;·&nbsp; C++, OpenGL, Qt</div>
+      <div class="project-desc">Interactive viewer for the MHR parametric human model. Supports PCA shape and pose sliders, real-time mesh deformation, and texture display. Built as a tool for understanding body model internals.</div>
+      <div class="project-links"><span class="soon">Coming soon</span></div>
+    </div>
+  </div>
+
+  <div class="project" data-cat="personal">
+    <div class="project-body">
+      <a class="project-title" href="https://github.com/chibisova/AvatarPlayground" target="_blank" rel="noopener">Avatar Playground</a>
+      <div class="project-meta">Jul 2026 — ongoing &nbsp;·&nbsp; C++, OpenCV, OpenGL</div>
+      <div class="project-desc">A personal C++ framework for exploring monocular visual odometry and human mesh recovery. Phase 1 (feature tracking, camera pose estimation, sparse 3D mapping) is complete: on the TUM RGB-D fr1/xyz benchmark it reaches 84.3% frame-pair tracking success and 2.02° mean rotation error. Phase 2 integrates a parametric human mesh estimator.</div>
+      <div class="project-links"><a href="https://github.com/chibisova/AvatarPlayground" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+  </div>
+
+  <div class="project" data-cat="personal">
+    <div class="project-body">
+      <a class="project-title" href="https://github.com/chibisova/PhygitalMemories" target="_blank" rel="noopener">AR Phygital Memories</a>
+      <div class="project-meta">Jun – Jul 2026 &nbsp;·&nbsp; AR, Unity</div>
+      <div class="project-desc">An augmented reality experience that blends physical and digital memory artifacts. Users place and revisit personal moments as spatial AR objects.</div>
+      <div class="project-links"><a href="https://github.com/chibisova/PhygitalMemories" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+  </div>
+
+  <div class="project" data-cat="personal">
+    <div class="project-body">
+      <a class="project-title" href="https://github.com/chibisova/sadong-flashcards" target="_blank" rel="noopener">Korean Flashcards</a>
+      <div class="project-meta">Mar – Jun 2026 &nbsp;·&nbsp; Python</div>
+      <div class="project-desc">A flashcard application built for personal TOPIK II study. Supports spaced repetition and vocabulary sets organized by TOPIK level.</div>
+      <div class="project-links"><a href="https://github.com/chibisova/sadong-flashcards" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+  </div>
+
+  <!-- ── Games ─────────────────────────────────────────────── -->
+  <h2 data-section="games">Games</h2>
+
+  <div class="project" data-cat="games">
+    <div class="project-body">
+      <a class="project-title" href="https://www.meta.com/experiences/mr-traveler/7098311453601727/" target="_blank" rel="noopener">MR Traveler</a>
+      <div class="project-meta">2024 – 2026 &nbsp;·&nbsp; Unity, HLSL &nbsp;·&nbsp; Skonec Entertainment (Technical Artist)</div>
+      <div class="project-desc">A mixed reality travel experience shipped to the Meta Quest Store. As technical artist, I built real-time shaders, VFX, and maintained the asset pipeline for XR targets.</div>
+      <div class="project-links">
+        <a href="https://www.meta.com/experiences/mr-traveler/7098311453601727/" target="_blank" rel="noopener">Meta Store</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" data-cat="games">
+    <div class="project-body">
+      <a class="project-title" href="https://drive.google.com/file/d/1gzL9pJuwwD534WxT99KXBoNHhp2LAga8/view" target="_blank" rel="noopener">The Memorial Shower — Jeju 4·3 Game</a>
+      <div class="project-meta">2024 &nbsp;·&nbsp; Unity, HLSL &nbsp;·&nbsp; Technical Artist</div>
+      <div class="project-desc">A game adaptation of IM Heung-soon's (임흥순) film, part of <em>The Memorial Shower</em> project (ARKO Public Art Project 2023–2024) commemorating the Jeju April 3rd Incident.</div>
+      <div class="project-links">
+        <a href="https://drive.google.com/file/d/1gzL9pJuwwD534WxT99KXBoNHhp2LAga8/view" target="_blank" rel="noopener">Video</a>
+        <a href="https://memorialshower.com/introduce/project" target="_blank" rel="noopener">Project</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" data-cat="games">
+    <div class="project-body">
+      <span class="project-title">Space Cleaners</span>
+      <div class="project-meta">2023 &nbsp;·&nbsp; Unity &nbsp;·&nbsp; 2023 Korea Metaverse Dev Contest (2023 메타버스 개발자 경진대회) — Grand Prize (team AlienBusters)</div>
+      <div class="project-desc">A VR cooperative game set in outer space, built for the 2023 Korea Metaverse Dev Contest. Players work together to clean debris from orbit using physics-based tools.</div>
+      <div class="project-links">
+        <a href="https://kr.aving.net/news/articleView.html?idxno=1785142" target="_blank" rel="noopener">Article</a>
+        <a href="https://www.youtube.com/watch?v=tM7PPVZbbYw" target="_blank" rel="noopener">Video</a>
+        <a href="https://www.metaversedev.kr/board_gallery_2023/%EB%8C%80%EC%83%81%EC%84%B1%EC%9D%B8%EB%B6%80-AlienBusters" target="_blank" rel="noopener">Award</a>
+        <a href="https://ct.kaist.ac.kr/boards/view/news_board/4110/168/" target="_blank" rel="noopener">KAIST News</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" data-cat="games">
+    <div class="project-body">
+      <a class="project-title" href="https://github.com/chibisova/GameDesign_CHI" target="_blank" rel="noopener">NERO: Play With Your Emotions</a>
+      <div class="project-meta">2022 &nbsp;·&nbsp; Unity &nbsp;·&nbsp; CHI 2022 Student Game Competition</div>
+      <div class="project-desc">An experimental game that uses the player's emotional state, measured via heart-rate, as an active control over in-game characters. Finalist at the CHI 2022 Student Game Competition, published in CHI '22 Extended Abstracts.</div>
+      <div class="project-links">
+        <a href="https://github.com/chibisova/GameDesign_CHI" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://dl.acm.org/doi/10.1145/3491101.3516485" target="_blank" rel="noopener">ACM DL</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const btns = document.querySelectorAll('.filter-btn');
+  const projects = document.querySelectorAll('.project');
+  const headings = document.querySelectorAll('h2[data-section]');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      projects.forEach(p => {
+        const cats = p.dataset.cat ? p.dataset.cat.split(' ') : [];
+        p.classList.toggle('hidden', f !== 'all' && !cats.includes(f));
+      });
+
+      headings.forEach(h => {
+        const sec = h.dataset.section;
+        const sectionProjects = [...projects].filter(p => p.dataset.cat === sec);
+        const anyVisible = sectionProjects.some(p => !p.classList.contains('hidden'));
+        h.classList.toggle('hidden', !anyVisible);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

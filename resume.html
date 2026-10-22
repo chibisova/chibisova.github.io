@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tanya Chibisova — Resume</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, serif; font-size: 17px; color: #111; background: #fff; display: flex; min-height: 100vh; }
+
+  nav {
+    width: 317px; min-width: 317px;
+    padding: 40px 0 40px 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 4px 0 18px rgba(0, 0, 0, 0.08);
+    position: fixed; top: 0; left: 0; bottom: 0;
+    background: #fff;
+  }
+  nav a {
+    display: block; padding: 14px 0;
+    text-decoration: none; color: #888;
+    font-family: Arial, Helvetica, sans-serif; font-size: 22px;
+    width: 100%; text-align: center;
+  }
+  nav a:hover { color: #111; }
+  nav a.active { color: #2a7ae2; }
+  nav .credit {
+    position: absolute; bottom: 40px; left: 0; right: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif; font-size: 17px; color: #aaa;
+  }
+  nav .credit a { color: #2a7ae2; font-size: 17px; padding: 0; display: inline; }
+
+  main { margin-left: 317px; padding: 70px 80px 80px; max-width: 860px; }
+
+  h1 { font-family: Arial, Helvetica, sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 10px; }
+  .tagline { color: #444; margin-bottom: 6px; }
+  .contact { color: #444; margin-bottom: 50px; font-size: 15px; }
+  .contact a { color: #2a7ae2; text-decoration: none; }
+
+  h2 { font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-weight: 700; color: #2a8a2a; margin: 36px 0 14px; }
+
+  ul { list-style: disc; padding-left: 22px; }
+  ul li { margin-bottom: 6px; color: #222; line-height: 1.6; }
+
+  .job { margin-bottom: 22px; }
+  .job-title { font-weight: bold; }
+  .job-meta { color: #666; font-size: 15px; margin-bottom: 4px; }
+
+  @media (max-width: 640px) {
+    body { flex-direction: column; }
+    nav {
+      position: sticky; top: 0; bottom: auto;
+      width: 100%; min-width: 0; z-index: 10;
+      flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;
+      padding: 0 8px;
+      border-right: none; border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    nav a { width: auto; padding: 14px 12px; text-align: center; font-size: 15px; }
+    nav .credit { display: none; }
+    main { margin-left: 0; padding: 32px 20px; min-height: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">About</a>
+  <a href="resume.html" class="active">Resume</a>
+  <a href="research.html">Research</a>
+  <a href="projects.html">Projects</a>
+  <div class="credit">
+    Template:<br>
+    <a href="https://github.com/stevenplatt/ResearchEng-portfolio">ResearchEng Portfolio</a>
+  </div>
+</nav>
+
+<main>
+  <h1>Tatiana Chibisova</h1>
+  <p class="tagline">Technical Artist &amp; Graphics Developer</p>
+  <p class="contact">Email: <a href="mailto:chibisova12@gmail.com">chibisova12@gmail.com</a> &nbsp;·&nbsp; Daejeon, South Korea</p>
+
+  <h2>Education</h2>
+  <ul>
+    <li>M.S. Culture Technology, KAIST (LAVA Lab), coursework track</li>
+    <li>B.S. Computer Engineering (Intelligent Robotics), HSE Moscow, graduated with honors</li>
+  </ul>
+
+  <h2>Technical Skills</h2>
+  <ul>
+    <li><strong>Programming:</strong> C++, Python, C# (Unity), HLSL / GLSL</li>
+    <li><strong>Graphics:</strong> Unity HDRP/URP, OpenGL, VFX Graph, Shader Graph, real-time rendering, Blender, Substance Painter</li>
+    <li><strong>Other:</strong> OpenCV, PyTorch, classical CV (SIFT, ORB, RANSAC, PnP, triangulation), Qt, Git</li>
+    <li><strong>Languages:</strong> Russian (native), English (C1), Korean (TOPIK 3)</li>
+  </ul>
+
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-title">Technical Artist — Skonec Entertainment</div>
+    <div class="job-meta">Seoul, South Korea &nbsp;·&nbsp; Mar 2024 – Jan 2026</div>
+    <ul>
+      <li>Developed interactive real-time custom shaders (Unity HLSL) for <em>MR Traveler</em>, shipped to the Meta Quest Store</li>
+      <li>Reduced draw calls 4× per scene, achieving stable 70 FPS on target hardware</li>
+      <li>Designed avatar customization interface and MR snapshot feature</li>
+      <li>Cut game-ready art asset production time from weeks to ~1 week using AI-assisted tooling</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-title">Graduate Research Student — KAIST LAVA Lab</div>
+    <div class="job-meta">Daejeon, South Korea &nbsp;·&nbsp; Sep 2021 – Feb 2024</div>
+    <ul>
+      <li>Set up and evaluated FLAME-based audio-driven facial animation; identified failure modes in emotional expressiveness</li>
+      <li>Proposed and prototyped audio-to-motion reconstruction (piano performance → virtual pianist); synchronized audio and mocap via onset-peak alignment</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-title">Junior Java Software Developer — CROC</div>
+    <div class="job-meta">Moscow, Russia &nbsp;·&nbsp; Sep – Dec 2019</div>
+    <ul>
+      <li>Built real-time data collection and Java processing logic for medical hardware</li>
+      <li>Built an interactive Vue.js web interface for hardware data visualization</li>
+    </ul>
+  </div>
+
+  <h2>Selected Projects</h2>
+  <ul>
+    <li><strong>Avatar Playground</strong> — C++17 / OpenCV monocular VO pipeline; 84.3% frame-pair acceptance, 2.02° mean rotation error on TUM RGB-D benchmark</li>
+    <li><strong>MHR Mesh Viewer</strong> — Interactive viewer for the MHR parametric human model with PCA shape and pose sliders</li>
+    <li>See <a href="projects.html">Projects</a> for the full list</li>
+  </ul>
+
+  <h2>Research</h2>
+  <ul>
+    <li>Extended abstract accepted to <strong>CHI 2022 Student Game Competition</strong> — <em>Play With Your Emotions: Exploring Possibilities of Emotions as Game Input in NERO</em></li>
+  </ul>
+
+  <h2>Awards</h2>
+  <ul>
+    <li><strong>Grand Prize</strong> — 2023 Korea Metaverse Dev Contest (2023 메타버스 개발자 경진대회) · <em>Space Cleaners VR</em>, team AlienBusters</li>
+    <li><strong>Excellence Award</strong> — Daejeon Startup Program, 2023 · <em>NoraeVerse: AI vocal-coaching VR karaoke platform</em></li>
+    <li><strong>Finalist</strong> — ACM CHI Student Game Competition, 2022 · <em>Play With Your Emotions</em> (published in CHI '22 Extended Abstracts)</li>
+    <li><strong>Regional Finalist</strong> — InnovateFPGA (Terasic / Intel), 2019 · DE10-Nano-based smart home system</li>
+    <li><strong>Excellence Award</strong> — Avito &amp; Android Academy Hackathon (User Care track), 2018</li>
+  </ul>
+
+  <h2>Activities</h2>
+  <ul>
+    <li><strong>Founder, Zerobase Korea</strong> (2026) — workflow tool for cross-discipline (art/dev) game production pipelines</li>
+    <li><strong>Invited Speaker, GameAiCON Seoul</strong> (2025) — "The Impact of Generative AI on the Game Ecosystem"</li>
+    <li><strong>Technical Artist</strong> — <em>Evacuation Order (疊開)</em>, Jeju 4·3 interactive 3D installation, dir. Lim Heung-soon (2025)</li>
+    <li><strong>Technical Artist</strong> — game adaptation of IM Heung-soon's film, part of <em><a href="https://memorialshower.com/introduce/project" target="_blank" rel="noopener">The Memorial Shower</a></em> (ARKO Public Art Project 2023–2024) (2024)</li>
+    <li><strong>Student Volunteer</strong> — SIGGRAPH Asia, Daegu (2022)</li>
+  </ul>
+</main>
+
+</body>
+</html>

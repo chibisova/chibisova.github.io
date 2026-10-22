@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tanya Chibisova</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, serif; font-size: 17px; color: #111; background: #fff; display: flex; min-height: 100vh; }
+
+  /* Sidebar */
+  nav {
+    width: 317px;
+    min-width: 317px;
+    padding: 40px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 4px 0 18px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    background: #fff;
+  }
+  nav a {
+    display: block;
+    padding: 14px 0;
+    text-decoration: none;
+    color: #888;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
+  }
+  nav a:hover { color: #111; }
+  nav a.active { color: #2a7ae2; }
+  nav .credit {
+    position: absolute;
+    bottom: 40px; left: 0; right: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #aaa;
+  }
+  nav .credit a { color: #2a7ae2; font-size: 17px; padding: 0; display: inline; }
+
+  /* Main content */
+  main {
+    margin-left: 317px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 60px 80px;
+  }
+  .about-card {
+    max-width: 900px;
+    text-align: center;
+  }
+  .photo {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e8e8e8;
+    display: block;
+    margin: 0 auto 28px;
+  }
+  .photo-placeholder {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    background: #e8e8e8;
+    display: block;
+    margin: 0 auto 28px;
+  }
+  h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .about-card p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    font-size: 22px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .links {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+  }
+  .links a {
+    color: #2a7ae2;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+  .links a:hover { text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    body { flex-direction: column; }
+    nav {
+      position: sticky; top: 0; bottom: auto;
+      width: 100%; min-width: 0; z-index: 10;
+      flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;
+      padding: 0 8px;
+      border-right: none; border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    nav a { width: auto; padding: 14px 12px; text-align: center; font-size: 15px; }
+    nav .credit { display: none; }
+    main { margin-left: 0; padding: 32px 20px; min-height: auto; }
+    .about-card p { font-size: 18px; }
+    .about-card p br { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="active">About</a>
+  <a href="resume.html">Resume</a>
+  <a href="research.html">Research</a>
+  <a href="projects.html">Projects</a>
+  <div class="credit">
+    Template:<br>
+    <a href="https://github.com/stevenplatt/ResearchEng-portfolio">ResearchEng Portfolio</a>
+  </div>
+</nav>
+
+<main>
+  <div class="about-card">
+    <img class="photo" src="https://res.cloudinary.com/dpnsfysve/image/upload/f_auto,q_auto/photo_2_opvuq4" alt="Tatiana Chibisova">
+    <h1>Tatiana Chibisova</h1>
+    <p>Hi, I'm Tanya. I'm a technical artist and graphics developer <br>with a background in real-time rendering, avatar pipelines, and computer vision.</p>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/tachibis/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/chibisova">GitHub</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
