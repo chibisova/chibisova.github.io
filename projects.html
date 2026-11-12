@@ -56,6 +56,9 @@
 
   .project { display: flex; gap: 32px; margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
   .project:last-child { border-bottom: none; }
+  .project { scroll-margin-top: 24px; }
+  .project:target { animation: target-flash 2s ease-out; }
+  @keyframes target-flash { from { background: #fff4c2; } to { background: transparent; } }
   .project.hidden { display: none; }
   .project-body { flex: 1; }
   .project-title {
@@ -89,7 +92,7 @@
     nav a { width: auto; padding: 14px 12px; text-align: center; font-size: 15px; }
     nav .credit { display: none; }
     main { margin-left: 0; padding: 32px 20px; min-height: auto; }
-    .project { flex-direction: column; }
+    .project { flex-direction: column; scroll-margin-top: 120px; }
   }
 </style>
 </head>
@@ -121,28 +124,19 @@
 
   <div class="project" data-cat="personal">
     <div class="project-body">
-      <a class="project-title" href="https://github.com/chibisova/catgpt" target="_blank" rel="noopener">CatGPT Widget</a>
-      <div class="project-meta">Sep 2026 &nbsp;·&nbsp; Python</div>
-      <div class="project-desc">A small desktop widget that responds to prompts as a cat. A playful experiment in wrapping LLM APIs with a custom personality layer.</div>
-      <div class="project-links"><a href="https://github.com/chibisova/catgpt" target="_blank" rel="noopener">GitHub</a></div>
-    </div>
-  </div>
-
-  <div class="project" data-cat="personal">
-    <div class="project-body">
-      <span class="project-title">MHR Mesh Viewer</span>
+      <a class="project-title" href="https://github.com/chibisova/AvatarStudio" target="_blank" rel="noopener">Avatar Studio</a>
       <div class="project-meta">Aug 2026 — ongoing &nbsp;·&nbsp; C++, OpenGL, Qt, Python</div>
-      <div class="project-desc">Tools for exploring and controlling the MHR parametric human model, in two parts: (1) an interactive Qt/OpenGL viewer with PCA shape and pose sliders and real-time mesh deformation; (2) measurement-driven body fitting in Python: the user enters target bust, waist and hip measurements, and the model adjusts interactively by recomputing the Jacobian of these measurements with respect to the PCA shape parameters in real time.</div>
-      <div class="project-links"><span class="soon">Coming soon</span></div>
+      <div class="project-desc">Tools for exploring and controlling the MHR parametric human model, in two parts:<br>(1) an interactive Qt/OpenGL viewer with PCA shape and pose sliders and real-time mesh deformation;<br>(2) measurement-driven body fitting in Python: the user enters target bust, waist and hip measurements, and the model adjusts interactively by recomputing the Jacobian of these measurements with respect to the PCA shape parameters in real time.</div>
+      <div class="project-links"><a href="https://github.com/chibisova/AvatarStudio" target="_blank" rel="noopener">GitHub</a></div>
     </div>
   </div>
 
   <div class="project" data-cat="personal">
     <div class="project-body">
-      <a class="project-title" href="https://github.com/chibisova/AvatarPlayground" target="_blank" rel="noopener">Avatar Playground</a>
+      <a class="project-title" href="https://github.com/chibisova/SpatialVisionPlayground" target="_blank" rel="noopener">Spatial Vision Playground</a>
       <div class="project-meta">Jul 2026 — ongoing &nbsp;·&nbsp; C++, OpenCV, OpenGL</div>
       <div class="project-desc">A personal C++ framework for exploring monocular visual odometry and human mesh recovery. Phase 1 (feature tracking, camera pose estimation, sparse 3D mapping) is complete: on the TUM RGB-D fr1/xyz benchmark it reaches 84.3% frame-pair tracking success and 2.02° mean rotation error. Phase 2 integrates a parametric human mesh estimator.</div>
-      <div class="project-links"><a href="https://github.com/chibisova/AvatarPlayground" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="project-links"><a href="https://github.com/chibisova/SpatialVisionPlayground" target="_blank" rel="noopener">GitHub</a></div>
     </div>
   </div>
 
@@ -167,7 +161,7 @@
   <!-- ── Games ─────────────────────────────────────────────── -->
   <h2 data-section="games">Games</h2>
 
-  <div class="project" data-cat="games">
+  <div class="project" id="mr-traveler" data-cat="games">
     <div class="project-body">
       <a class="project-title" href="https://www.meta.com/experiences/mr-traveler/7098311453601727/" target="_blank" rel="noopener">MR Traveler</a>
       <div class="project-meta">2024 – 2026 &nbsp;·&nbsp; Unity, HLSL &nbsp;·&nbsp; Skonec Entertainment (Technical Artist)</div>
